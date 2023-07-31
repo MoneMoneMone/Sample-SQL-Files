@@ -1,19 +1,16 @@
 /*The sequel was about analyzing data from 3 different tables such as customer table, sales table, and product table. I incorporate all the things that I know since it is my first time to use postgreSQL*/
+create table customer (customer_id varchar, customer_name varchar, segment varchar, age int, country varchar, city varchar, state varchar, postal_code numeric, region varchar)					   
+copy customer from 'C:\Users\ADMIN\Desktop\SQL\CSV file\Part 2 - SQL\Customer.csv' delimiter ',' csv header
 
-select 
-	a.customer_id,
-	a.order_line,
-	a.product_id,
-	a.sales,
-	b.customer_id,
-	b.customer_name,
-	b.age
-from sales_2015 as a
-full join customer_20_60 as b
-on a.customer_id = b.customer_id
-order by a.customer_id,b.customer_id
+create table product (product_id varchar, category varchar, sub_category varchar, product_name varchar)
+copy product from 'C:\Users\ADMIN\Desktop\SQL\CSV file\Part 2 - SQL\Product.csv' delimiter ',' csv header
 
-/*Cross Join*/
+create table sales (order_line int, order_id varchar, order_date date, ship_date date, ship_mode varchar, customer_id varchar, product_id varchar,
+					sales numeric, quantity numeric, discount numeric, profit numeric)
+copy sales from 'C:\Users\ADMIN\Desktop\SQL\CSV file\Part 2 - SQL\Sales.csv' delimiter ',' csv header					
+
+
+/*Cross Join Example*/
 create table month_values (MM integer)
 create table year_values (YYYY integer)
 insert into month_values values (1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12)
