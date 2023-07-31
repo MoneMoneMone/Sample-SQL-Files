@@ -1,3 +1,4 @@
+/*The sequel was about analyzing data from 3 different tables such as customer table, sales table, and product table. I incorporate all the things that I know since it is my first time to use postgreSQL*/
 
 select 
 	a.customer_id,
