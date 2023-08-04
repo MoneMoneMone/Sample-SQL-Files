@@ -1,5 +1,5 @@
 	/*The sequel was about analyzing data from 3 different tables such as customer table, sales table, and product table. I incorporate all the things that I know since it is my first time to use postgreSQL*/
-
+	/*The data set source was from udemy's learning material */
 create table customer (customer_id varchar, customer_name varchar, segment varchar, age int, country varchar, city varchar, state varchar, postal_code numeric, region varchar)					   
 copy customer from 'C:\Users\ADMIN\Desktop\SQL\CSV file\Part 2 - SQL\Customer.csv' delimiter ',' csv header
 
